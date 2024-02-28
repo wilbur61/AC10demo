@@ -40,6 +40,7 @@ public class TutorialController {
    */
    @PostMapping("/tutorials")
    public void createTutorial(@RequestBody Tutorial tutorial) {
+       System.out.println("IN @PostMapping(/tutorials");
        tutorialServices.addTutorial(tutorial);
    }
 
@@ -47,7 +48,7 @@ public class TutorialController {
    @PutMapping("/tutorials/{id}")
    public void updateTutorial(@PathVariable("id") long id, @RequestBody Tutorial tutorial) {
        Optional<Tutorial> tutorialData = tutorialServices.getTutorialById(id);
-
+       System.out.println("IN PutMapping(/tutorials/{id}");
        if (tutorialData.isPresent()) {
            Tutorial _tutorial = tutorialData.get();
            _tutorial.setTitle(tutorial.getTitle());

@@ -1,6 +1,8 @@
 package com.example.AC10demo;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
+
 @Entity
 @Table(name = "tutorials")
 public class Tutorial {
