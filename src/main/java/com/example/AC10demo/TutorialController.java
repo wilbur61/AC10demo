@@ -50,11 +50,13 @@ public class TutorialController {
        Optional<Tutorial> tutorialData = tutorialServices.getTutorialById(id);
        System.out.println("IN PutMapping(/tutorials/{id}");
        if (tutorialData.isPresent()) {
-           Tutorial _tutorial = tutorialData.get();
-           _tutorial.setTitle(tutorial.getTitle());
-           _tutorial.setDescription(tutorial.getDescription());
-           _tutorial.setPublished(tutorial.isPublished());
-           tutorialServices.addTutorial(_tutorial);
+           tutorialServices.updateTutorial(id,tutorial);
+           // Eliminating duplicate code below
+           //Tutorial _tutorial = tutorialData.get();
+           //_tutorial.setTitle(tutorial.getTitle());
+           //_tutorial.setDescription(tutorial.getDescription());
+           //_tutorial.setPublished(tutorial.isPublished());
+          // tutorialServices.addTutorial(_tutorial);
        }
    }
 

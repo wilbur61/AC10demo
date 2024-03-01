@@ -38,7 +38,7 @@ public class TutorialServices {
 
    public void updateTutorial(long id, Tutorial tutorial) {
        Optional<Tutorial> tutorialData = tutorialRepository.findById(id);
-
+       System.out.println(">>>>>>>>>>>TutorService IN: updateTutorial");
        if (tutorialData.isPresent()) {
            Tutorial _tutorial = tutorialData.get();
            _tutorial.setTitle(tutorial.getTitle());
